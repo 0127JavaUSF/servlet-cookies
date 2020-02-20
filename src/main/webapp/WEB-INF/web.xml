@@ -1,0 +1,48 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <context-param>
+  	<param-name>app-scope</param-name>
+  	<param-value>app-value</param-value>
+  </context-param>
+  
+  <servlet>
+  	<servlet-name>CookieServlet</servlet-name>
+  	<display-name>CookieServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.CookieServlet</servlet-class>
+  	<init-param>
+  		<param-name>servlet-scope-param</param-name>
+  		<param-value>servlet-scope-value</param-value>
+  	</init-param>
+  	<load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet>
+  	<servlet-name>SessionServlet</servlet-name>
+  	<display-name>SessionServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.SessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CookieServlet</servlet-name>
+  	<url-pattern>/cookies</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SessionServlet</servlet-name>
+  	<url-pattern>/sessions</url-pattern>
+  </servlet-mapping>
+  
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.html</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>java.lang.NullPointerException</exception-type>
+		<location>/npe.html</location>
+	</error-page>
+</web-app>
